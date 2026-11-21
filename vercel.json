@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/miro.js": {
+      "maxDuration": 30
+    }
+  }
+}
