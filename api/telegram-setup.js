@@ -1,3 +1,5 @@
+import { timingSafeEqual } from "node:crypto";
+
 function reply(res, status, body) {
   res.status(status).json(body);
 }
@@ -5,7 +7,7 @@ function reply(res, status, body) {
 function safeEqual(a, b) {
   const left = Buffer.from(String(a || ""));
   const right = Buffer.from(String(b || ""));
-  return left.length === right.length && require("crypto").timingSafeEqual(left, right);
+  return left.length === right.length && timingSafeEqual(left, right);
 }
 
 export default async function handler(req, res) {
